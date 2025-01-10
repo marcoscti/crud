@@ -24,7 +24,6 @@ router.post("/register", async (req: Request, res: Response) => {
 // Login
 router.post("/login", async (req: Request, res: Response) => {
   const { email, password } = req.body;
-  console.log("body: ",email, password);
   try {
     const [rows]: any = await db.query("SELECT * FROM users WHERE email = ?", [
       email,
